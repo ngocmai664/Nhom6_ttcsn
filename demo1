@@ -34,8 +34,9 @@
                 <a href="men.html">NAM</a>
               
             <a href="classics.html">BST</a>
-            <a href="cart.html">GIỎ HÀNG</a>
-            <a href="login.html" class="btn-icon"><i class="fa fa-user"></i></a>
+            <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
+
+            <a href="login.html"><i class="fa fa-user"></i></a>
         </div>
     </nav>
     <div class="main">
@@ -93,7 +94,7 @@
                 </div>
                 <div class="item_content">
                     <h3>ÁO KHOÁC SIÊU NHẸ</h3>
-                    <p>Ultra Light Down</p>
+                    <p>433.500 VND</p>
                     <a href="#">Buy Now</a>
                 </div>
             </div>
@@ -257,7 +258,7 @@
             <a href="mailto: roshnideyic365@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
         </div>
         <hr>
-        <p>CẢm ơn vì quý khách đã ghé thăm (^ ^)</p>
+        <p>Cảm ơn vì quý khách đã ghé thăm (^ ^)</p>
     </footer>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -268,6 +269,13 @@
     /*------------------------------------------------NAVBARSUBMENU----------------------------------------*/
    
     /*------------------------------------------------NAVBARICON----------------------------------------*/
+    .nav_side a.active {
+  background-color: #6e5858; /* đổi màu tối */
+}
+
+.nav_side a.active i {
+  color: rgb(64, 0, 255); /* đổi màu sáng */
+}
 
     .btn-icon {
   display: inline-block;
@@ -280,6 +288,7 @@
 
 .btn-icon:hover {
   opacity: 0.8;
+  color: #f00;
 }
 
 .btn-icon i {
@@ -766,6 +775,14 @@ footer p
 }
 </style>
 
+<script>
+    function activeLink(link) {
+  link.classList.add("active");
+}
 
+function deactiveLink(link) {
+  link.classList.remove("active");
+}
+</script>
 </body>
 </html>
