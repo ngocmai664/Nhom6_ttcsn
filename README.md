@@ -32,7 +32,7 @@
         </div>
         </div>
         <div class="nav_side">
-            <a href="whatsnew.html" id="">TIN TỨC</a>
+            <a href="#tintuc" >TIN TỨC</a>
             <li class="submenu">
               <a href="women.html">NỮ</a>
               <ul class="submenu-items">
@@ -164,7 +164,7 @@
         </div>
     </div>
 
-    <div class="testi">
+    <div class="testi" id="tintuc">
         <h2>TIN TỨC</h2>
         <div class="testi_container">
             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
