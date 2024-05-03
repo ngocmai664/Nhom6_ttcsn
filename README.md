@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <nav class="nav nav_top">
         <div class="logo">
-            <a href="#"><img src="https://th.bing.com/th/id/R.4f9bbf4e2fbab38e563e3c7839ab021f?rik=OyvAIZTQNFrA3A&riu=http%3a%2f%2fmail.taratexfashion.com%2fasset%2fimages%2fclient%2fclient3.png&ehk=97eJ5aS8NQIlKIEAwiPLZ1kr%2bq2mDqEQsrSi9IbZH8Y%3d&risl=&pid=ImgRaw&r=0" width="250"></a>
+            <a href="webbanhang.html"><img src="https://th.bing.com/th/id/R.4f9bbf4e2fbab38e563e3c7839ab021f?rik=OyvAIZTQNFrA3A&riu=http%3a%2f%2fmail.taratexfashion.com%2fasset%2fimages%2fclient%2fclient3.png&ehk=97eJ5aS8NQIlKIEAwiPLZ1kr%2bq2mDqEQsrSi9IbZH8Y%3d&risl=&pid=ImgRaw&r=0" width="250"></a>
         </div>
         
         <div class="nav_timkiem">
@@ -34,21 +34,21 @@
         <div class="nav_side">
             <a href="#tintuc" >TIN TỨC</a>
             <li class="submenu">
-              <a href="women.html">NỮ</a>
+              <a href="sanphamnu.html">NỮ</a>
               <ul class="submenu-items">
-                <li><a href="#">Áo</a>
+                <li><a href="sanphamnu.html">Áo</a>
                 </li>
-                <li><a href="#">Quần</a></li>
-                <li><a href="#">Váy</a></li>
+                <li><a href="sanphamnu.html">Quần</a></li>
+                <li><a href="sanphamnu.html">Váy</a></li>
               </ul>
             </li>
             <li class="submenu">
-              <a href="men.html">NAM</a>
+              <a href="sanphamnam.html">NAM</a>
               <ul class="submenu-items">
-                <li><a href="#">Áo</a>
+                <li><a href="sanphamnam.html">Áo</a>
                 </li>
-                <li><a href="#">Quần</a></li>
-                <li><a href="#">Đồ Bộ</a></li>
+                <li><a href="sanphamnam.html">Quần</a></li>
+                <li><a href="sanphamnam.html">Đồ Bộ</a></li>
               </ul>
             </li>
             <a href="chill.html">TRẺ EM</a>
@@ -59,13 +59,13 @@
             <div class="main_content">
            
                 <div class="btn" >
-                    <a href="MENU.html">MUA NGAY</a>
+                    <a href="#sanpham">MUA NGAY</a>
                 </div>
             </div>
     </div>
     <div class="product">
         <h2>Sản phẩm nổi bật</h2>
-        <div class="product_container">
+        <div class="product_container" id="sanpham">
 
             <div class="item">
                 <div class="item_img">
@@ -165,7 +165,7 @@
     </div>
 
     <div class="testi" id="tintuc">
-        <h2>TIN TỨC</h2>
+        <h2 >TIN TỨC</h2>
         <div class="testi_container">
             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
