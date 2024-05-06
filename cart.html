@@ -1,3 +1,5 @@
+
+
 <html>
   <head>
   <meta charset="utf-8">
@@ -124,6 +126,7 @@ function updateCart() {
       <img src="${item.image}" alt="${item.name}" style="width: 100px; height: 100px; float: left;">
         <div style="margin-left: 120px;">
           <h4>${item.name}</h4>
+          <h5 style="text-align:left; font-size: 20px; color:#878787;"> ${item.ma}</h5>
           <p>Price: ${item.price}</p>
           <p>Quantity: ${item.quantity}</p>
           <button class="delete" style="float: right; padding: 10px 10px; margin-top: -50px; box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.963);"">Delete</button>
@@ -299,7 +302,7 @@ updateCart();
   }
   footer p
   {
-      color:rgba(247, 178, 217, 0.726);
+      color:rgba(126, 104, 116, 0.726);
   }
   </style>
 </body>
