@@ -92,6 +92,8 @@
             <img src="https://th.bing.com/th/id/OIP.cW2It1yfbSUYsD92e2k1LQAAAA?rs=1&pid=ImgDetMain" alt="Product 1">
     </div>
     <h4>CHIFON CASUAL</h4>
+    <h5 style="text-align:center; font-size: 20px; color:#878787">AKTt13</h5>
+
     <p>155.000 VND</p>
           <div class="button-container" ><button class="add-to-cart">Add to Cart</button>
             <a href="OT3.html"><button class="buy-now">Buy Now </button></a></div>
@@ -101,6 +103,8 @@
             <img src="https://i.pinimg.com/736x/5b/81/86/5b818689d60887cc36ab5d6c418aa19d.jpg" alt="Product 2">
           </div>
           <h4>ÁO BLAZER</h4>
+          <h5 style="text-align:center; font-size: 20px; color:#878787">AKTW97</h5>
+
           <p> 200.000 VND</p>
           <div class="button-container" ><button class="add-to-cart">Add to Cart</button>
             <a href="OT7.html"><button class="buy-now">Buy Now </button></a></div>
@@ -110,6 +114,8 @@
                 <img src="https://i.pinimg.com/736x/1a/66/b6/1a66b69bb0736835763f7613b2951542.jpg" alt="Product 2">
             </div>
             <h4>AÓ KHOÁC BÒ</h4>
+            <h5 style="text-align:center; font-size: 20px; color:#878787">AKTM03</h5>
+
             <p>199.000 VND</p>
             <div class="button-container" ><button class="add-to-cart">Add to Cart</button>
               <a href="OT1.html"><button class="buy-now">Buy Now </button></a></div>
@@ -127,6 +133,8 @@
         <img src="https://cf.shopee.vn/file/sg-11134201-22120-pv7avl5biwkvab" alt="Product 1">
           </div>
           <h4>QUẦN NHUNG TĂM</h4>
+          <h5 style="text-align:center; font-size: 20px; color:#878787">AKMR19</h5>
+
           <p>234.000 VND</p>
       <div class="button-container" ><button class="add-to-cart">Add to Cart</button>
         <a href="OT2.html"><button class="buy-now">Buy Now </button></a></div>
@@ -137,6 +145,8 @@
         <img src="https://th.bing.com/th/id/OIP.QIIhVJJumNcKd5lYSVEmmwHaHa?rs=1&pid=ImgDetMain" alt="Product 2">
     </div>
     <h4>QUẦN JEANS ỐNG ĐỨNG</h4>
+    <h5 style="text-align:center; font-size: 20px; color:#878787">AKTP16</h5>
+
     <p>400.000 VND</p>
       <div class="button-container" ><button class="add-to-cart">Add to Cart</button>
         <a href="OT1.html"><button class="buy-now">Buy Now </button></a></div>
@@ -147,6 +157,8 @@
             <img src="https://cf.shopee.vn/file/sg-11134201-22100-l9pf9ffnu9hv78" alt="Product 2">
         </div>
         <h4>QUẦN ĐÙI DA</h4>
+        <h5 style="text-align:center; font-size: 20px; color:#878787">AKTD75</h5>
+
         <p>99.999 VND</p>
       <div class="button-container">
         <button class="add-to-cart">Add to Cart</button>
@@ -168,6 +180,8 @@
         <img src="https://1.bp.blogspot.com/-E_2HI24dq9Y/Xn9PhDaNKrI/AAAAAAAAOfE/MtqBlR8H3_IkgXO1qLrw-fseQEvFwuAGwCLcBGAsYHQ/s1600/Korean%2BFashion%2BModel%2B-%2BHyemi%2B-%2BIndoor%2BPhotoshoot%2BCollection%2B-%2BTruePic.net%2B%252810%2529.jpg" alt="Product 1">
     </div>
     <h4>KOREAN DRESSES WHITE</h4>
+    <h5 style="text-align:center; font-size: 20px; color:#878787">AKTS19</h5>
+
     <p>1156.000 VND</p>
       <div class="button-container" ><button class="add-to-cart">Add to Cart</button>
         <a href="OT2.html"><button class="buy-now">Buy Now </button></a></div>
@@ -178,6 +192,8 @@
         <img src="https://th.bing.com/th/id/OIP.M8Bnup0HXZYcvMpRRwEBLwHaJ4?rs=1&pid=ImgDetMain" alt="Product 2">
     </div>
     <h4>VÁY HAI DÂY HOA CÚC</h4>
+    <h5 style="text-align:center; font-size: 20px; color:#878787">AKUY08</h5>
+
     <p>89.000 VND</p>
       <div class="button-container" ><button class="add-to-cart">Add to Cart</button>
         <a href="OT1.html"><button class="buy-now">Buy Now </button></a></div>
@@ -188,6 +204,8 @@
             <img src="https://th.bing.com/th/id/OIP.SiIpSKbSi8UmqEJt2iKwYQHaJQ?rs=1&pid=ImgDetMain" alt="Product 2">
         </div>
         <h4>VÁY NỮ NGẮN</h4>
+        <h5 style="text-align:center; font-size: 20px; color:#878787">AKTW72</h5>
+
         <p>367.000 VND</p>
       <div class="button-container">
         <button class="add-to-cart">Add to Cart</button>
@@ -201,42 +219,27 @@
   
   <script>
     const products = document.querySelectorAll('.product');
-let cartItemsArray = JSON.parse(sessionStorage.getItem('cartItems')) || [];
-
-products.forEach(product => {
-product.querySelector('.add-to-cart').addEventListener('click', () => {
-const quantityInput = product.querySelector('.buttons_added input.input-qty');
-const item = {
-image: product.querySelector('img').src,
-name: product.querySelector('h4').innerText,
-price: product.querySelector('p').innerText,
-quantity:1
-};
-cartItemsArray.push(item);
-updateCart();
-window.location.href = 'cart.html'; // Navigate to giohang.html
-});
-});
-
-products.forEach(product => {
-product.querySelector('.buy-now').addEventListener('click', () => {
-const quantityInput = product.querySelector('.buttons_added input.input-qty');
-const item = {
-image: product.querySelector('img').src,
-name: product.querySelector('h4').innerText,
-price: product.querySelector('p').innerText,
-quantity: parseInt(quantityInput.value)
-};
-cartItemsArray.push(item);
-updateCart();
-window.location.href = 'thanhtoan.html'; // Navigate to giohang.html
-});
-});
-
-function updateCart() {
-// Update cart items array
-sessionStorage.setItem('cartItems', JSON.stringify(cartItemsArray));
-}
+    let cartItemsArray = [];
+  
+    products.forEach(product => {
+      product.querySelector('.add-to-cart').addEventListener('click', () => {
+        const item = {
+          image: product.querySelector('img').src,
+          name: product.querySelector('h4').innerText,
+          ma: product.querySelector('h5').innerText,
+          price: product.querySelector('p').innerText,
+          quantity: 1
+        };
+        cartItemsArray.push(item);
+        updateCart();
+        window.location.href = 'cart.html'; // Navigate to giohang.html
+      });
+    });
+  
+    function updateCart() {
+      // Update cart items array
+      sessionStorage.setItem('cartItems', JSON.stringify(cartItemsArray));
+    }
 
 
   </script>
@@ -290,7 +293,8 @@ sessionStorage.setItem('cartItems', JSON.stringify(cartItemsArray));
   }
   
   .product p {
-    font-size: 14px;
+    font-size: 15px;
+    color:#f00;
     margin-bottom: 20px;
   }
   
