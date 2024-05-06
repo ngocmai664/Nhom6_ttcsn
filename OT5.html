@@ -55,25 +55,28 @@
             </div>
     
      
-        <div class="product" style=" margin-top: 130px; margin-bottom: 20px;">
-            <div class="product-frame" style=" height:901px; width:600px;">
-                <img src="https://dongphuctienbao.com/wp-content/uploads/2021/06/ao-polo-dep-2.jpg" alt="product" style="box-shadow: 2px 4px 6px rgba(92, 91, 91, 0.422);"></div>
-                <div class="jss15"><div class="jss16"><h1>ÁO POLO NAM</h1>
-                    <button class="MuiButtonBase-root MuiIconButton-root" tabindex="0" type="button" aria-label="Add to wishlist">
-                    <span class="MuiIconButton-label">
-                        <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z">
-
-                            </path>
-                        </svg>
-                    </span>
-                    <span class="MuiTouchRipple-root">
-
-                    </span></button></div
+            <div class="product" style=" margin-top: 130px; margin-left:6px; margin-bottom: 20px;">
+                <div class="product-frame" style=" height:901px; width:600px;">
+                    <img src="https://cf.shopee.vn/file/526376dbf08c72dd18a412a41991f473" alt="product" style="box-shadow: 4px 4px 4px 6px rgba(92, 91, 91, 0.422);"></div>
+                    <div class="jss15"><div class="jss16"><h4>QUẦN TÂY NAM</h4>
+                        <button class="MuiButtonBase-root MuiIconButton-root" tabindex="0" type="button" aria-label="Add to wishlist">
+                            <span class="MuiIconButton-label">
+                              <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z">
+                                </path>
+                              </svg>
+                            </span>
+                            <br>
+                        
+                          </button>
+                          </div>
+                    <div class="masp" style="margin-top: -15px; "> <!-- Thay thẻ <span> bằng thẻ <div> -->
+                              <h5 style="text-align:left; font-size: 20px; color:#878787">AKTW13</h5>
+                            </div> </div
                     ><div class="jss17"><div
-                        ><h4>Price: 177.000 VND</h4>
+                        ><p>Price: 177.000 VND</p>
                     </div><div>
-                        <p>In stock: 67</p>
+                        <h6>In stock: 67</h6>
                     </div></div><div class="jss18"><span>Colors: </span>
                         <div class="jss52">
                             <div class="jss53 jss54" style="background-color: rgb(255, 87, 51);">
@@ -174,49 +177,58 @@
                                   
                                     </script>
                             <div class="jss20"><button class="add-to-cart">Add to Cart</button>
-                            <button class="buy-now"><a href="thanhtoan.html">Buy Now</a></button></div>
-                            
-                            
-                          <div><div class="jss55"><div class="jss56"><div class="jss57 jss60">Description</div><div class="jss57 ">Reviews</div></div><div><div class="jss58"><div class="jss59">
-<P>Áo thun polo nam là một trong những loại áo đơn giản, được ra đời cách đây hơn 1 thế kỷ và càng ngày càng phát triển không bị lỗi thời và được ưa chuộng nhất hiện nay bởi vì chúng có thể được dùng trong nhiều hoàn cảnh khác nhau như làm trang phục công sở và cả trang phục đời thường, làm áo thun đồng phục</P>
-                        </div></div></div></div></div></div></div>
-  
-  
-                                <script>
-                                    const products = document.querySelectorAll('.product');
-                                    let cartItemsArray = [];
-                                  
-                                    products.forEach(product => {
-                                      product.querySelector('.add-to-cart').addEventListener('click', () => {
-                                        const item = {
-                                          image: product.querySelector('img').src,
-                                          name: product.querySelector('h4').innerText,
-                                          price: product.querySelector('p').innerText,
-                                          quantity: 1
-                                        };
-                                        cartItemsArray.push(item);
-                                        updateCart();
-                                        window.location.href = 'cart.html'; // Navigate to giohang.html
-                                      });
-                                    });
-                                    products.forEach(product => {
-                                      product.querySelector('.buy-now').addEventListener('click', () => {
-                                        const item = {
-                                          image: product.querySelector('img').src,
-                                          name: product.querySelector('h4').innerText,
-                                          price: product.querySelector('p').innerText,
-                                          quantity: 1
-                                        };
-                                        cartItemsArray.push(item);
-                                        updateCart();
-                                        window.location.href = 'thanhtoan.html'; // Navigate to giohang.html
-                                      });
-                                    });
-                                  
-                                    function updateCart() {
-                                      // Update cart items array
-                                      sessionStorage.setItem('cartItems', JSON.stringify(cartItemsArray));
-                                    }
+                                <button class="buy-now"><a href="thanhtoan.html" style=" color:#fff; text-decoration: none;">Buy Now</a></button></div>
+                                
+                                
+                              <div><div class="jss55"><div class="jss56"><div class="jss57 jss60">Description</div><div class="jss57 ">Reviews</div></div><div><div class="jss58"><div class="jss59">
+             <p>Áo hai dây croptop là một món đồ thời trang không thể thiếu trong tủ đồ của các cô gái yêu thích sự trẻ trung, năng động. Với thiết kế ngắn, ôm sát cơ thể và hai dây mảnh mai, áo hai dây croptop giúp tôn lên vóc dáng thon gọn và làn da săn chắc.</p>
+                            </div></div></div></div></div></div></div>
+      
+      
+                                    <script>
+                                      const products = document.querySelectorAll('.product');
+                                        let cartItemsArray = [];
+                                      
+                                        products.forEach(product => {
+                                          product.querySelector('.add-to-cart').addEventListener('click', () => {
+                                            const item = {
+                                              image: product.querySelector('img').src,
+                                            
+                                              name: product.querySelector('h4').innerText, 
+                                              ma: product.querySelector('h5').innerText, 
+                                          
+                                               price: product.querySelector('p').innerText,
+                                              quantity: product.querySelector('.input-qty').value
+                                            };
+                                            cartItemsArray.push(item);
+                                            updateCart();
+                                            window.location.href = 'cart.html'; // Navigate to giohang.html
+                                          });
+                                        });
+                                        products.forEach(product => {
+                                          product.querySelector('.buy-now').addEventListener('click', () => {
+                                            const item = {
+                                              image: product.querySelector('img').src,
+                                             
+                                              name: product.querySelector('h4').innerText,
+                                              ma: product.querySelector('h5').innerText, 
+                                                price: product.querySelector('p').innerText,
+                                              quantity: product.querySelector('.input-qty').value
+                                            };
+                                            cartItemsArray.push(item);
+                                            updateCart();
+                                            window.location.href = 'thanhtoan.html'; // Navigate to giohang.html
+                                          });
+                                        });
+                                      
+                                        function updateCart() {
+                                          // Update cart items array
+                                          sessionStorage.setItem('cartItems', JSON.stringify(cartItemsArray));
+                                        }
+                                        function updateCart() {
+                                          // Update cart items array
+                                          sessionStorage.setItem('cartItems', JSON.stringify(cartItemsArray));
+                                        }
                                   </script>
 
 
