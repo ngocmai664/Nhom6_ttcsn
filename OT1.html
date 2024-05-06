@@ -58,7 +58,7 @@
         <div class="product" style=" margin-top: 130px; margin-left:6px; margin-bottom: 20px;">
             <div class="product-frame" style=" height:901px; width:600px;">
                 <img src="https://i.pinimg.com/originals/f2/fd/c9/f2fdc95278b0403aae465031897f8331.jpg" alt="product" style="box-shadow: 4px 4px 4px 6px rgba(92, 91, 91, 0.422);"></div>
-                <div class="jss15"><div class="jss16"><h1>BỘ ĐỒ VEST</h1>
+                <div class="jss15"><div class="jss16"><h4>BỘ ĐỒ VEST</h4>
                     <button class="MuiButtonBase-root MuiIconButton-root" tabindex="0" type="button" aria-label="Add to wishlist">
                         <span class="MuiIconButton-label">
                           <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
@@ -75,9 +75,9 @@
                 <div class="masp" style="margin-top: -15px; "> <!-- Thay thẻ <span> bằng thẻ <div> -->
                           <h5 style="text-align:left; font-size: 20px; color:#878787">AKTM08</h5>
                         </div>    <div class="jss17"><div
-                        ><h4>238.000 VND</h4>
+                        ><p>238.000 VND</p>
                     </div><div>
-                        <p>In stock: 26</p>
+                        <h6>In stock: 26</h6>
                     </div></div><div class="jss18"><span>Colors: </span>
                         <div class="jss52">
                             <div class="jss53 jss54" style="background-color: rgb(255, 87, 51);">
@@ -189,15 +189,18 @@
  
 </div></div></div></div></div></div></div>
                                 <script>
-                                    const products = document.querySelectorAll('.product');
+                                   const products = document.querySelectorAll('.product');
                                     let cartItemsArray = [];
                                   
                                     products.forEach(product => {
                                       product.querySelector('.add-to-cart').addEventListener('click', () => {
                                         const item = {
                                           image: product.querySelector('img').src,
-                                          name: product.querySelector('h4').innerText,
-                                          price: product.querySelector('p').innerText,
+                                        
+                                          name: product.querySelector('h4').innerText, 
+                                          ma: product.querySelector('h5').innerText, 
+                                      
+                                           price: product.querySelector('p').innerText,
                                           quantity: product.querySelector('.input-qty').value
                                         };
                                         cartItemsArray.push(item);
@@ -209,8 +212,10 @@
                                       product.querySelector('.buy-now').addEventListener('click', () => {
                                         const item = {
                                           image: product.querySelector('img').src,
+                                         
                                           name: product.querySelector('h4').innerText,
-                                          price: product.querySelector('p').innerText,
+                                          ma: product.querySelector('h5').innerText,
+                                            price: product.querySelector('p').innerText,
                                           quantity: product.querySelector('.input-qty').value
                                         };
                                         cartItemsArray.push(item);
@@ -219,6 +224,10 @@
                                       });
                                     });
                                   
+                                    function updateCart() {
+                                      // Update cart items array
+                                      sessionStorage.setItem('cartItems', JSON.stringify(cartItemsArray));
+                                    }
                                     function updateCart() {
                                       // Update cart items array
                                       sessionStorage.setItem('cartItems', JSON.stringify(cartItemsArray));
