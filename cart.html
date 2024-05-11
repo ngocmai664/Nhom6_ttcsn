@@ -1,0 +1,314 @@
+<html>
+  <head>
+  <meta charset="utf-8">
+  <title>SHOP CART Nhóm 7 </title>
+</head>
+<body>
+  <header class="header" style="justify-content: center; background-color: white;">
+    <div class="logo" >
+        <a href="webbanhang.html"><img src="https://th.bing.com/th/id/R.4f9bbf4e2fbab38e563e3c7839ab021f?rik=OyvAIZTQNFrA3A&riu=http%3a%2f%2fmail.taratexfashion.com%2fasset%2fimages%2fclient%2fclient3.png&ehk=97eJ5aS8NQIlKIEAwiPLZ1kr%2bq2mDqEQsrSi9IbZH8Y%3d&risl=&pid=ImgRaw&r=0" style="justify-content: center;"width="250px"></a>
+
+    </div>
+    
+  </header>
+<style>
+  .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #f0f0f0;
+     
+    }
+
+.logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+</style>
+<div class="cart" id="cart">
+  <h2>GIỎ HÀNG</h2>
+  <div class="cart-items">
+    <img src="https://bizweb.dktcdn.net/100/352/697/themes/716531/assets/empty-cart.png?1605521376718" alt="Cart Empty" class="cart-empty" style="width:100%; height: 450px;" >
+  </div>
+  <div class="button-container">
+    <a href="thanhtoan.html"><button class="checkout" style="box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.963);">Thanh toán</button></a>
+    <a href="webbanhang.html"><button class="add-more" style="box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.963);">Thêm sản phẩm</button></a>
+  </div>
+</div>
+<style>
+  .cart {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+ 
+}
+
+.cart h2 {
+  color:chocolate;
+  font-size: 30px; /* Điều chỉnh kích thước chữ */
+  text-align: center; /* Căn chữ ở giữa */
+  border-right: 1px solid #ddd; /* Thêm dòng kẻ bên phải */
+  padding-right: 10px; /* Thêm đệm bên phải để tạo khoảng cách giữa chữ và dòng kẻ */
+}
+
+.cart-items {
+  margin-bottom: 20px;
+}
+
+.checkout, .add-more {
+  font-size: 14px;
+  color: #337ab7;
+  text-decoration: none;
+  border-bottom: 1px solid #337ab7;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px 20px;
+  margin-left: 20px;
+  justify-content: center;
+  right: 20px;
+  display: block;
+  margin: auto;
+}
+
+.checkout:hover, .add-more:hover {
+  color: #f5f6f8;
+  border-bottom: 1px solid #23527c;
+  background-color: #6e5858;
+}
+
+
+.button-container a {
+  /* Remove underline from links */
+  text-decoration: none;
+}
+
+
+.checkout {
+  /* Style checkout button */
+  background-color: #4CAF50;
+  color: #fff;
+}
+
+.add-more {
+  /* Style add-more button */
+  background-color: #007bff;
+  color: #fff;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+</style>
+<script>
+  const cartItems = JSON.parse(sessionStorage.getItem('cartItems')) || [];
+
+const cart = document.querySelector('.cart');
+const giohangCartItems = document.querySelector('.cart-items');
+
+function updateCart() {
+  giohangCartItems.innerHTML = '';
+  let total = 0;
+  
+
+  cartItems.forEach(item => {
+    const giohangCartItem = document.createElement('div');
+    giohangCartItem.classList.add('cart-item');
+    giohangCartItem.style.border = '1px solid #ccc';
+    giohangCartItem.style.padding = '10px';
+
+    giohangCartItem.innerHTML = `
+      <img src="${item.image}" alt="${item.name}" style="width: 100px; height: 100px; float: left;">
+        <div style="margin-left: 120px;">
+          <h4 style=" font-size: 23px;"">${item.name}</h4>
+          <h5 style="text-align:left; font-size: 18px; color:#878787;"> ${item.ma}</h5>
+          <p>Giá: ${item.price}</p>
+            
+            ${item.quantity > 1 ? ' <p style="font-size:16px; color:red;">' + item.totalPrice + '</p>' : ''} <!-- Hiển thị giá tổng chỉ khi số lượng lớn hơn 1 -->
+          <p>Số lượng: ${item.quantity}</p>
+          <button class="delete" style="float: right; padding: 10px 10px; margin-top: -50px; box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.963);"">Delete</button>
+        </div>
+      `;
+    giohangCartItem.querySelector('.delete').addEventListener('mouseover', () => {
+      giohangCartItem.querySelector('.delete').style.color = '#f00';
+    });
+    giohangCartItem.querySelector('.delete').addEventListener('mouseout', () => {
+      giohangCartItem.querySelector('.delete').style.color = '#333';
+    });
+
+    giohangCartItem.querySelector('.delete').addEventListener('click', () => {
+      const index = cartItems.indexOf(item);
+      cartItems.splice(index, 1);
+      updateCart();
+      sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
+    });
+
+    giohangCartItems.appendChild(giohangCartItem);
+
+    let price = item.price.replace(/\D/g,''); // Loại bỏ tất cả các ký tự không phải số
+console.log('Original price:', item.price); // In giá trị gốc
+console.log('Processed price:', price); // In giá trị sau khi đã xử lý
+total += parseInt(price) * item.quantity; ;
+
+  });
+
+  if (cartItems.length === 0) {
+    document.querySelector('.checkout').innerText = `Mua ngay`;
+    document.querySelector('.checkout').parentElement.href = 'webbanhang.html';
+    document.querySelector('.add-more').style.display = 'none';
+    document.querySelector('.cart-items').innerHTML = `<img src="https://bizweb.dktcdn.net/100/352/697/themes/716531/assets/empty-cart.png?1605521376718" alt="Cart Empty" class="cart-empty" style="width:100%; height: 450px;" >`;
+
+  } else {
+    document.querySelector('.checkout').innerText = `Thanh toán (${total})`;
+    document.querySelector('.checkout').parentElement.href = 'thanhtoan.html';
+    document.querySelector('.add-more').style.display = 'block';
+  }
+}
+
+updateCart();
+
+</script>
+
+<footer>
+        
+  <div class="pages">  
+      <h3>Customer Care</h3>
+      <a href="#">Contact Us</a>|
+      <a href="#">FAQs</a>|
+      <a href="#">Store Location</a>|
+      <a href="#">Shipping</a>|
+      <a href="#">Returns</a>|
+      <a href="#">Blog</a>
+  </div>
+  <div class="doc">
+      <h3>Documents</h3>
+      <a href="#">Privacy Policy</a>|
+      <a href="#">Terms of Use</a>|
+      <a href="#">Refund Policy</a>
+  </div>
+  <div class="social">
+      <h3>Follow Us</h3>
+      <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+      <a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  </div>
+  <div class="contact">
+      <h3>Contact Us</h3>
+      <a href="https://api.WhatsApp.com/send?phone=+910000000000" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+      <a href="tel: +910000000000"><i class="fa fa-phone" aria-hidden="true"></i></a>
+      <a href="mailto: roshnideyic365@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+  </div>
+  <hr>
+  <p>Cảm ơn vì quý khách đã ghé thăm (^ ^)</p>
+</footer>
+<style>footer
+  {
+      background-color: black;
+      padding:50px;
+  }
+  footer .pages
+  {
+      text-align: center;
+  }
+  footer .pages h3
+  {
+      color: rgb(255, 226, 243);
+      font-size: 20px;
+      font-family: 'Trebuchet MS', sans-serif; 
+      padding: 5px;
+      font-weight: bold;
+  }
+  footer .pages a
+  {
+      text-decoration: none;
+      margin:10px;
+      color: rgba(255, 226, 243, 0.808);
+      font-size: 15px;
+      font-family: 'Trebuchet MS', sans-serif; 
+  }
+  footer .pages a:hover
+  {
+      color:white;
+  }
+  footer .doc
+  {
+      text-align: center;
+  }
+  footer .doc h3
+  {
+      color: rgb(255, 226, 243);
+      font-size: 20px;
+      font-family: 'Trebuchet MS', sans-serif; 
+      padding: 5px;
+      font-weight: bold;
+  }
+  footer .doc a
+  {
+      text-decoration: none;
+      margin:10px;
+      color: rgba(255, 226, 243, 0.808);
+      font-size: 15px;
+      font-family: 'Trebuchet MS', sans-serif; 
+  }
+  footer .doc a:hover
+  {
+      color:white;
+  }
+  footer .social
+  {
+      text-align: center;
+  }
+  footer .social h3
+  {
+      color: rgb(255, 226, 243);
+      font-size: 20px;
+      font-family: 'Trebuchet MS', sans-serif; 
+      padding: 5px;
+      font-weight: bold;
+  }
+  footer .contact
+  {
+      text-align: center;
+  }
+  footer .contact h3
+  {
+      color: rgb(255, 226, 243);
+      font-size: 20px;
+      font-family: 'Trebuchet MS', sans-serif; 
+      padding: 5px;
+      font-weight: bold;
+  }
+  footer .social a
+  {
+      font-size: 30px;
+      text-decoration: none;;
+      color:rgba(247, 193, 224, 0.904);
+      margin:10px;
+  }
+  footer .social a:hover
+  {
+      color:white;
+  }
+  footer .contact a
+  {
+      font-size: 30px;
+      text-decoration: none;;
+      color:rgba(247, 193, 224, 0.904);
+      margin:10px;
+  }
+  footer .contact a:hover
+  {
+      color:white;
+  }
+  footer p
+  {
+      color:rgba(247, 178, 217, 0.726);
+  }
+  </style>
+</body>
+</html>

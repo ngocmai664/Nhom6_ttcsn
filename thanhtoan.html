@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout</title>
+  <style>
+.header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+
+.logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+.login-button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: #fff;
+    }
+
+.checkout-form {
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+.checkout-form label {
+      margin-bottom: 5px;
+    }
+
+.checkout-form input {
+      margin-bottom: 10px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+.checkout-form textarea {
+      margin-bottom: 10px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+
+
+
+.cart-link {
+      display: block;
+      margin-top: 5px;
+      text-align: center;
+      text-decoration: solid;
+      color: #b41616;
+      font-size: 16px;
+    }
+    .cart-link:hover{
+        text-decoration: solid;
+        color:green;
+   
+    }
+  </style>
+</head>
+<body>
+  <header class="header" style="justify-content: center; background-color: white;">
+    <div class="logo" >
+        <a href="webbanhang.html"><img src="https://th.bing.com/th/id/R.4f9bbf4e2fbab38e563e3c7839ab021f?rik=OyvAIZTQNFrA3A&riu=http%3a%2f%2fmail.taratexfashion.com%2fasset%2fimages%2fclient%2fclient3.png&ehk=97eJ5aS8NQIlKIEAwiPLZ1kr%2bq2mDqEQsrSi9IbZH8Y%3d&risl=&pid=ImgRaw&r=0" style="justify-content: center;"width="250px"></a>
+
+    </div>
+    
+  </header>
+  <div class="container">
+  <form class="checkout-form">
+    <div class="dauhang" style="display:flex; justify-content:space-between ;">
+        <h2>Thông tin giao hàng</h2>
+    </div>
+    
+    <label for="name">Tên:</label>
+    <input type="text" id="name" placeholder="Name">
+    <label for="phone">Số điện thoại:</label>
+    <input type="tel" id="phone" placeholder="Phone Number">
+    <label for="address">Địa chỉ:</label>
+    <input type="text" id="address" placeholder="Address">
+    <label for="notes">Ghi chú (Tùy chọn):</label>
+    <textarea id="notes" placeholder="Notes"></textarea>
+    
+    </form>
+  <script>
+    
+     function Warn() {
+        var name = document.getElementById('name').value;
+        var phone = document.getElementById('phone').value;
+        var address = document.getElementById('address').value;
+        var paymentMethod = document.querySelector('input[name="payment-method"]:checked');
+        if (name && phone && address && paymentMethod) {
+            alert ("Bạn đã đặt hàng thành công!");
+            document.write ("Bạn đã đặt hàng thành công!");
+        } else {
+            alert ("Vui lòng điền đầy đủ thông tin giao hàng và chọn phương thức thanh toán!");
+        }
+     }
+  </script>
+ <div class="payment-methods">
+    <h2>Phương thức thanh toán</h2>
+    <ul>
+      <li>
+        <input type="radio" id="visa" name="payment-method">
+        <label for="visa">
+          <img src="https://logos-world.net/wp-content/uploads/2020/04/Visa-Symbol-700x394.png" alt="Visa">
+          <span>Visa</span>
+        </label>
+      </li>
+      <li>
+        <input type="radio" id="mastercard" name="payment-method">
+        <label for="mastercard">
+          <img src="https://i.pinimg.com/originals/cc/1d/22/cc1d22fb6c71d4372365f3b3000d3752.png" alt="Mastercard">
+          <span>Mastercard</span>
+        </label>
+      </li>
+      <li>
+        <input type="radio" id="paypal" name="payment-method">
+        <label for="paypal">
+          <img src="https://th.bing.com/th/id/R.fca76a9d27c54d07ba8c567cb3e2fe1d?rik=vJ%2fFvc7xLxNcEg&riu=http%3a%2f%2ftous-logos.com%2fwp-content%2fuploads%2f2017%2f09%2fPaypal-logo.jpg&ehk=Jf3VB7bWFm1sjKT%2bWcnvnB0PvjQJsJRK%2bAhPWwhR0NE%3d&risl=&pid=ImgRaw&r=0" alt="PayPal">
+          <span>PayPal</span>
+        </label>
+      </li>
+      <li>
+        <input type="radio" id="bank-transfer" name="payment-method">
+        <label for="bank-transfer">
+          <img src="https://cdn4.iconfinder.com/data/icons/online-payment-methods-01/128/bank_trasfer_payment_methods_copy-512.png" alt="Bank Transfer">
+          <span>Bank Transfer</span>
+        </label>
+      </li>
+    </ul>
+ 
+  </div>
+  <style>.payment-methods {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.1);
+    background-color: #f9f9f9;
+  }
+  
+  .payment-methods h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .payment-methods ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .payment-methods li {
+    margin-bottom: 10px;
+  }
+  
+  .payment-methods input[type="radio"] {
+    display: none;
+  }
+  
+  .payment-methods label {
+    display: block;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .payment-methods label img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .payment-methods label span {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .payment-methods input[type="radio"]:checked + label {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .payment-methods button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .payment-methods button[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+  </style>
+  <div class="check" >
+    <h2>SẢN PHẨM</h2>
+    <div class="checkout">
+    
+
+    </div> 
+     <div class="tong">
+      
+     </div>
+    <input type="submit" value="ĐẶT HÀNG" onclick="Warn();" style="padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: #fff;"/>
+   <hr
+    ><a href="cart.html" class="cart-link" style="text-decoration: solid;"> Quay lại Giỏ hàng</a>
+  </div>
+  </div>
+  <style>
+    
+                 
+    .check {width: 100%;
+                    
+    
+                    border: 1px solid #ddd;
+              
+                    border-radius: 10px;
+                    padding: 20px;
+                    
+                  }
+                  
+                  .check h2 {
+                    font-size: 18px;
+                    font-weight: bold;
+                    margin-bottom: 10px;
+                  }
+                  
+                  .checkout {
+                    margin-bottom: 20px;
+                  }
+                  
+                  .checkout {
+                    font-size: 14px;
+                    color: #337ab7;
+                    text-decoration: none;
+                    border-bottom: 1px solid #337ab7;
+                    box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.1);
+
+                    border: 1px solid #ddd;
+                    border-radius: 10px;
+                    padding: 20px 20px;
+                    margin-left: 20px;
+                    justify-content: center;
+                    right: 20px;
+                  }
+                  
+                  .checkout:hover {
+                    color: #f5f6f8;
+                    border-bottom: 1px solid #23527c;
+                    background-color: #6e5858;
+                  }
+  </style>
+ <script>
+  const cartItems = JSON.parse(sessionStorage.getItem('cartItems')) || [];
+
+  const cart = document.querySelector('.check');
+  const giohangCartItems = document.querySelector('.checkout');
+  const totalContainer = document.querySelector('.tong'); // Tạo một div mới để hiển thị tổng số tiền
+ 
+
+  function updateCart() {
+    giohangCartItems.innerHTML = '';
+    let total = 0;
+
+    cartItems.forEach(item => {
+      const giohangCartItem = document.createElement('div');
+      giohangCartItem.classList.add('cart-item');
+      giohangCartItem.style.border = '1px solid #ccc';
+      giohangCartItem.style.padding = '10px';
+
+      giohangCartItem.innerHTML = `
+        <img src="${item.image}" alt="${item.name}" style="width: 100px; height: 100px; float: left;">
+          <div style="margin-left: 120px;">
+            <h4 style=margin-bot:-10px;>${item.name}</h4>
+            <h5 style="text-align:left; color:#878787;"> ${item.ma}</h5>
+            <p >Giá: ${item.price}</p>
+            ${item.quantity > 1 ? ' <p style="font-size:16px; color:red;">' + item.totalPrice + '</p>' : ''} <!-- Hiển thị giá tổng chỉ khi số lượng lớn hơn 1 -->
+            <p>Số lượng: ${item.quantity}</p>
+          </div>
+        `;
+
+      giohangCartItems.appendChild(giohangCartItem);
+
+      let price = item.price.replace(/\D/g,''); // Loại bỏ tất cả các ký tự không phải số
+      total += parseInt(price) * item.quantity; 
+    });
+
+    // Cập nhật tổng số tiền
+    totalContainer.innerHTML = '<h2>Tổng số tiền thanh toán: ' + total.toLocaleString('it-IT') + ' VND</h2>'; // Định dạng tổng số tiền theo định dạng tiền tệ Việt Nam
+ 
+  }
+  updateCart();
+</script>
+
+</script>
+
+  </div>
+  <style>
+    .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.payment-methods,
+.check,
+.checkout-form {
+  width: 33.33%;
+  padding: 20px;
+  
+  display: flex;
+  background-color: white;
+  border-radius: 5px;
+  flex-direction: column;
+
+}
+
+.payment-methods h2,
+.check h2,
+.checkout-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Add any additional styles for each div here */
+  </style>
+  
+<footer>
+        
+  <div class="pages">  
+      <h3>Customer Care</h3>
+      <a href="#">Contact Us</a>|
+      <a href="#">FAQs</a>|
+      <a href="#">Store Location</a>|
+      <a href="#">Shipping</a>|
+      <a href="#">Returns</a>|
+      <a href="#">Blog</a>
+  </div>
+  <div class="doc">
+      <h3>Documents</h3>
+      <a href="#">Privacy Policy</a>|
+      <a href="#">Terms of Use</a>|
+      <a href="#">Refund Policy</a>
+  </div>
+  <div class="social">
+      <h3>Follow Us</h3>
+      <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+      <a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  </div>
+  <div class="contact">
+      <h3>Contact Us</h3>
+      <a href="https://api.WhatsApp.com/send?phone=+910000000000" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+      <a href="tel: +910000000000"><i class="fa fa-phone" aria-hidden="true"></i></a>
+      <a href="mailto: roshnideyic365@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+  </div>
+  <hr>
+  <p>Cảm ơn vì quý khách đã ghé thăm (^ ^)</p>
+</footer>
+<style>footer
+  {
+    margin-top: 20px;
+      background-color: black;
+      padding:50px;
+  }
+  footer .pages
+  {
+      text-align: center;
+  }
+  footer .pages h3
+  {
+      color: rgb(255, 226, 243);
+      font-size: 20px;
+      font-family: 'Trebuchet MS', sans-serif; 
+      padding: 5px;
+      font-weight: bold;
+  }
+  footer .pages a
+  {
+      text-decoration: none;
+      margin:10px;
+      color: rgba(255, 226, 243, 0.808);
+      font-size: 15px;
+      font-family: 'Trebuchet MS', sans-serif; 
+  }
+  footer .pages a:hover
+  {
+      color:white;
+  }
+  footer .doc
+  {
+      text-align: center;
+  }
+  footer .doc h3
+  {
+      color: rgb(255, 226, 243);
+      font-size: 20px;
+      font-family: 'Trebuchet MS', sans-serif; 
+      padding: 5px;
+      font-weight: bold;
+  }
+  footer .doc a
+  {
+      text-decoration: none;
+      margin:10px;
+      color: rgba(255, 226, 243, 0.808);
+      font-size: 15px;
+      font-family: 'Trebuchet MS', sans-serif; 
+  }
+  footer .doc a:hover
+  {
+      color:white;
+  }
+  footer .social
+  {
+      text-align: center;
+  }
+  footer .social h3
+  {
+      color: rgb(255, 226, 243);
+      font-size: 20px;
+      font-family: 'Trebuchet MS', sans-serif; 
+      padding: 5px;
+      font-weight: bold;
+  }
+  footer .contact
+  {
+      text-align: center;
+  }
+  footer .contact h3
+  {
+      color: rgb(255, 226, 243);
+      font-size: 20px;
+      font-family: 'Trebuchet MS', sans-serif; 
+      padding: 5px;
+      font-weight: bold;
+  }
+  footer .social a
+  {
+      font-size: 30px;
+      text-decoration: none;;
+      color:rgba(247, 193, 224, 0.904);
+      margin:10px;
+  }
+  footer .social a:hover
+  {
+      color:white;
+  }
+  footer .contact a
+  {
+      font-size: 30px;
+      text-decoration: none;;
+      color:rgba(247, 193, 224, 0.904);
+      margin:10px;
+  }
+  footer .contact a:hover
+  {
+      color:white;
+  }
+  footer p
+  {
+      color:rgba(247, 178, 217, 0.726);
+  }
+  </style>
+</body>
+</html>
